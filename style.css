@@ -1,1 +1,113 @@
+@charset "UTF-8";
 
+/* Espaço para criar variáveis */
+:root {
+    --cor-titulo: black;
+    --cor-degrade-1: rgb(133, 199, 133);
+    --cor-degrade-2: rgb(219, 255, 222);
+
+    --largura-maxima: 1080px;
+}
+
+/* Redefinição do CSS global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 25px;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    /*background-color: var(--cor-fundo);*/
+    background-image: linear-gradient(90deg, var(--cor-degrade-1), var(--cor-degrade-2)) 
+}
+
+.cabecalho {
+    padding: 1em;
+    text-align: center;
+}
+
+.cabecalho-titulo {
+    font-size: 2em;
+    color: var(--cor-titulo)
+}
+
+.principal {
+    max-width: var(--largura-maxima);
+    margin: 0 auto;
+    padding: 0 1em 1em 1em;
+    text-align: center;
+}
+
+.principal-subtitulo {
+    margin-bottom: .5em;
+    color: var(--cor-titulo)
+}
+
+.principal-paragrafo {
+    font-size: 1.1em;
+    margin-bottom: .5em;
+}
+
+.principal-paragrafo::before {
+    content: " ";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-position: center center;
+    margin-right: 10px;
+}
+
+.principal-paragrafo::after {
+    content: " ";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-position: center center;
+    margin-right: 10px;
+}
+
+.principal-carrossel {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 1em 0 1em 0;
+}
+
+.principal-carrossel-imagem {
+    max-width: 49%;
+    border-radius: 1em;
+}
+
+.rodape {
+    text-align: center;
+    padding: 1em;
+}
+
+.rodape-paragrafo {
+    margin-bottom: 1em;
+}
+
+.rodape-paragrafo a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .principal-carrossel {
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .principal-carrossel-imagem {
+        max-width: 100%;
+        border-radius: 1em;
+    }
+}
